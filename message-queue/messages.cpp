@@ -47,7 +47,11 @@ int main(int argc, char** argv)
     //  Prepare our context and socket
     zmq::context_t context (1);
     zmq::socket_t subscriber (context, ZMQ_SUB);
-    subscriber.connect("tcp://localhost:2687");
+    // location of engine is localhost here. but it can also work over the network.
+    // for example, "tcp://192.168.1.30:2687" would connect to the Camvi engine running
+    // at 192.168.1.30
+    const char* engineLocation = "tcp://localhost:2687";
+    subscriber.connect(engineLocation);
     subscriber.setsockopt( ZMQ_SUBSCRIBE, "", 0);
 
     while (!g_interrupted) {
