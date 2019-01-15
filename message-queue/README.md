@@ -1,8 +1,10 @@
-# Simple message queue implementation
+# Simple Message Queue Implementation
 
 This is a sample application that subscribes to events from Camvi 
 face recognition engine and prints out some event information as it 
 receives them.
+
+It was tested on a Ubuntu 16.04 system.
 
 ## To Build
 
