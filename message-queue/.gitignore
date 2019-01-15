@@ -1,0 +1,5 @@
+/zmq/
+/zmq-build/
+/cppzmq-build/
+/build-release/
+/.idea/
