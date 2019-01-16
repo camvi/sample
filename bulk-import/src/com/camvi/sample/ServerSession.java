@@ -45,7 +45,7 @@ public class ServerSession {
             System.out.println("Login success");
             authToken = resp;
         } catch (Exception e) {
-            System.out.println("Error create attribute: " + e.getMessage());
+            System.out.println("Error with login: " + e.getMessage());
             e.printStackTrace();
             return false;
         }	
@@ -68,7 +68,7 @@ public class ServerSession {
             urlConnection.setRequestProperty("Authorization", authToken);
             int statusCode = urlConnection.getResponseCode();
             if (statusCode != HttpURLConnection.HTTP_OK) {
-                throw new Exception("Search error: " + statusCode);
+                throw new Exception("connection error: " + statusCode);
             }
             return getResponseData(urlConnection, false);
         } catch (MalformedURLException e) {
